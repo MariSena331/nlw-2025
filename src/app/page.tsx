@@ -1,29 +1,45 @@
-import { ArrowRight, Copy, Mail } from "lucide-react";
+import Image from "next/image";
 
-import { Button } from "@/components/button";
-import { IconButton } from "@/components/icon-button";
-import { InputField, InputIcon, InputRoot } from "@/components/input";
+import logo from "../assets/logo.svg";
+import { Radio } from "lucide-react";
 
 export default function Home() {
   return (
-    <main>
-      <Button type="submit">
-        Enviar
-        <ArrowRight />
-      </Button>
+    <main className="max-w-[1240px] mx-auto px-5 py-8 md:py-0">
+      <div className="mid-h-dvh flex flex-col justify-center gap-16">
+        <div className="flex flex-col gap-8 items-center md:items-start">
+          <Image src={logo} alt="devstage" width={108.5} height={30} />
 
-      <IconButton>
-        <Copy />
-      </IconButton>
+          <h1 className="text-4xl text-center leading-none font-heading font-medium flex flex-col md:text-7xl md:text-left">
+            <span className="text-blue">CodeCraft</span>
+            Summit 2025
+          </h1>
+        </div>
 
-      <div>
-        <InputRoot>
-          <InputIcon>
-            <Mail className="size-5" />
-          </InputIcon>
-
-          <InputField placeholder="Digite seu e-mail" />
-        </InputRoot>
+        <div className="flex gap-5 items-stretch flex-col md:flex-row">
+          <div className="flex-1 bg-gray-700 border border-gray-600 rounded-2xl p-8 space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="font-heading font-semibold text-gray-200 text-xl">
+                Sobre o evento
+              </h2>
+              <span className="text-purple font-semibold text-xs flex items-center gap-2">
+                <Radio className="size-5" />
+                AO VIVO
+              </span>
+            </div>
+            <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+              Um evento feito por e para pessoas desenvolvedoras apaixonadas por
+              criar soluções inovadoras e compartilhar conhecimento. Vamos
+              mergulhar nas tendências mais recentes em desenvolvimento de
+              software, arquitetura de sistemas e tecnologias emergentes, com
+              palestras, workshops e hackathons.
+              <br />
+              <br />
+              Dias 15 a 17 de março | Das 18h às 21h | Online & Gratuito
+            </p>
+          </div>
+          <form action="">form</form>
+        </div>
       </div>
     </main>
   );
